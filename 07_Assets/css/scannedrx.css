@@ -1,0 +1,298 @@
+/* =============================================
+   BASE RESET & LAYOUT
+   ============================================= */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Wrapper: full height, flex row, NO overflow:hidden so content isn't clipped */
+.wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Sidebar scrolls independently */
+#sidebar-container {
+  height: 100vh;
+  flex-shrink: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Main panel fills remaining space, column flex */
+.main-panel {
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* clips children so only #content scrolls */
+}
+
+/* Topbar stays fixed at top */
+#topbar-container {
+  flex-shrink: 0;
+}
+
+/* Only the content area scrolls */
+#content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+}
+
+/* =============================================
+   CONTENT BODY
+   ============================================= */
+
+.content-body {
+  padding: 20px 16px 40px;
+}
+
+.top-title {
+  color: #14a36d;
+  font-size: 1.55rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1faa72;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  margin-bottom: 18px;
+}
+
+.back-btn:hover {
+  background-color: #169660;
+  color: #fff;
+}
+
+.content-box {
+  border: 2px solid #e1e1e1;
+  border-radius: 6px;
+  background: #fff;
+  padding: 20px;
+}
+
+.left-panel {
+  padding: 10px 18px 10px 10px;
+}
+
+.scan-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #4b4b4b;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.scan-subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pill-icon-wrap {
+  width: 92px;
+  height: 92px;
+  border: 2px solid #d9d9d9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.pill-icon-wrap .material-symbols-outlined {
+  font-size: 44px;
+  color: #9c9c9c;
+}
+
+.medicine-title {
+  text-align: center;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #4b4b4b;
+  margin-bottom: 22px;
+}
+
+.details-table {
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.details-table tr {
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.details-table td {
+  padding: 10px 0;
+  font-size: 0.95rem;
+}
+
+.details-table td:first-child {
+  color: #555;
+  width: 50%;
+}
+
+.details-table td:last-child {
+  text-align: right;
+  color: #4b4b4b;
+  font-weight: 600;
+}
+
+.btn-continue,
+.btn-rescan {
+  width: 100%;
+  border: none;
+  color: white;
+  font-size: 0.98rem;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.btn-continue {
+  background-color: #21a56f;
+  margin-bottom: 10px;
+}
+
+.btn-continue:hover {
+  background-color: #1c925f;
+}
+
+.btn-rescan {
+  background-color: #ff5b2e;
+}
+
+.btn-rescan:hover {
+  background-color: #eb4f25;
+}
+
+.right-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 760px;
+}
+
+.image-placeholder {
+  width: 100%;
+  max-width: 540px;
+  height: 760px;
+  background: #fafafa;
+  border: 2px dashed #cfcfcf;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9a9a9a;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 991px) {
+  .left-panel {
+    padding-right: 10px;
+    margin-bottom: 24px;
+  }
+
+  .right-panel {
+    min-height: auto;
+  }
+
+  .image-placeholder {
+    height: 420px;
+  }
+}
+
+@media (max-width: 576px) {
+  .top-title {
+    font-size: 1.3rem;
+  }
+
+  .scan-title {
+    font-size: 1.3rem;
+  }
+
+  .scan-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .medicine-title {
+    font-size: 1.2rem;
+  }
+
+  .details-table td {
+    font-size: 0.88rem;
+  }
+
+  .btn-continue,
+  .btn-rescan {
+    font-size: 0.92rem;
+    padding: 11px;
+  }
+
+  .image-placeholder {
+    font-size: 1rem;
+    height: 320px;
+  }
+}
+
+/* =============================================
+   FLOATING BUTTON
+   ============================================= */
+
+.floating-btns {
+  position: fixed;
+  bottom: 1.4rem;
+  right: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 999;
+}
+
+.float-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: #1d9e75;
+  color: #fff;
+  font-size: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(29, 158, 117, 0.35);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.float-btn:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+
