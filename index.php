@@ -26,7 +26,7 @@
   <body>
     
     <!-- START OF NAVBAR -->
-    <?php include_once '01_Includes/navbar_forgot-reset.php' ?>
+    <?php include_once '01_Includes/navbar_landing-role.php' ?>
 
     <!-- HERO -->
     <div class="hero mt-5">

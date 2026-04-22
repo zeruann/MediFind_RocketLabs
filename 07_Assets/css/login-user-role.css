@@ -1,14 +1,16 @@
 body {
-    font-family: "Poppins", sans-serif;
-  
-    background:
-      linear-gradient(rgba(30, 157, 117, 0.94), rgba(30, 157, 117, 0.9)),
-      url("../../07_Assets/images/auth-bg2.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  min-height: 100vh;
+  background-image: url("../../07_Assets/images/auth-bg2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  overflow: hidden;
   }
 
+  
   /* NAVBAR */
   .navbar {
     /* semi-transparent teal glass */
@@ -22,7 +24,6 @@ body {
   }
   
   .navbar-logo {
-    color: #ffffff;
     font-weight: 900;
     font-size: 1.5rem;
     font-family: "Plus Jakarta Sans", sans-serif;
