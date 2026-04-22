@@ -1,0 +1,76 @@
+// for form stem in signup page
+function validateStep1() {
+    const fname = document.getElementById('Fname').value.trim();
+    const lname = document.getElementById('Lname').value.trim();
+    const contactNo = document.getElementById('ContactNo').value.trim();
+    const gender = document.getElementById('gender').value;
+    const birthDate = document.getElementById('birth_date').value;
+
+    if (!fname || !lname || !contactNo || !gender || !birthDate) {
+        alert('Please fill in all required fields in Step 1.');
+        return false;
+    }
+    changeStep(2);
+}
+
+function validateStep2() {
+    const province = document.getElementById('Province').value;
+    const city = document.getElementById('City').value;
+    const barangay = document.getElementById('Barangay').value;
+    const street = document.getElementById('Street').value.trim();
+
+    if (!province || !city || !barangay || !street) {
+        alert('Please fill in all required fields in Step 2.');
+        return false;
+    }
+    changeStep(3);
+}
+
+function changeStep(step) {
+    const steps = document.querySelectorAll('.form-step');
+    steps.forEach((stepDiv, index) => {
+        stepDiv.style.display = index + 1 === step ? 'block' : 'none';
+    });
+}
+
+function validateForm() {
+    const email = document.getElementById('email').value.trim();
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmpass').value;
+
+    if (!email || !username || !password || !confirmPassword) {
+        alert('Please fill in all required fields in Step 3.');
+        return false;
+    }
+
+    if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return false;
+    }
+
+    return true;
+}
+
+function changeStep(stepNumber) {
+    // Hide all steps
+    document.querySelectorAll('.form-step').forEach(step => {
+        step.style.display = 'none';
+    });
+    // Show the target step
+    document.getElementById('step' + stepNumber).style.display = 'block';
+}
+
+
+//togglePassword
+function togglePassword(fieldId, iconId) {
+    const input = document.getElementById(fieldId);
+    const icon = document.getElementById(iconId);
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.replace('bi-eye-slash', 'bi-eye');
+    } else {
+        input.type = 'password';
+        icon.classList.replace('bi-eye', 'bi-eye-slash');
+    }
+}

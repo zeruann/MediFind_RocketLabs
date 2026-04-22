@@ -1,0 +1,454 @@
+body {
+  min-height: 100vh;
+  background-image: url("../../07_Assets/images/auth-bg2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  overflow: hidden;
+}
+
+.left-bg {
+  background-image: url("../../07_Assets/images/auth-bg3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(29, 158, 117, 1);
+  min-height: 100vh;
+}
+
+.logo-section {
+  padding: 2rem;
+}
+
+.logo-img {
+  width: 250px;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-size: 4.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin-bottom: -0.5rem;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.brand-sub {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.right-panel {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.card {
+  width: 400px;
+  border-radius: 20px;
+  border: none;
+  padding: 3rem 3.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  background: #ffffff;
+
+  height: 475px;
+  margin-top: 25px;
+}
+
+.right-panel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  padding: 1rem; 
+  box-sizing: border-box; 
+}
+
+.card-signup {
+  width: 100%;
+  max-width: 400px;
+
+  border-radius: 20px;
+  border: none;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  background: #ffffff;
+
+  margin-top: 35px;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.welcomeText {
+  font-size: 1.8rem;
+  font-weight: 650;
+  text-align: center;
+  margin-bottom: 2px;
+  color: #1d9e75;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.loginText {
+  font-size: 13px;
+  font-weight: 400;
+  color: #666;
+  text-align: center;
+  margin-bottom: 1.4rem;
+  margin-top: 0;
+}
+
+.input-group-text {
+  background: #ffffff;
+  border-right: none;
+  color: #aaa;
+  border-radius: 32px 0 0 32px !important;
+}
+
+.toggle-pw {
+  border-left: none !important;
+  border-radius: 0 8px 8px 0 !important;
+  color: #aaa;
+}
+
+.toggle-pw:hover {
+  color: #6120a1;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0 32px 32px 0 !important;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-signup {
+  border-radius: 5px !important;
+  font-size: 14px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.input-group:focus-within .input-group-text,
+.input-group:focus-within .form-control {
+  border-color: rgb(166, 207, 194);
+}
+
+/* ---------- Remember / Forgot ---------- */
+.form-check-label {
+  font-size: 12px;
+  color: #555;
+}
+
+.form-check-input:checked {
+  background-color: #1d9e75;
+  border-color: #1d9e75;
+}
+
+.forgotPass {
+  font-size: 12px;
+  color: #555;
+  text-decoration: none;
+}
+
+.forgotPass:hover {
+  color: #1d9e75;
+  text-decoration: underline;
+}
+
+/* ---------- Login Button ---------- */
+.btn-login {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 32px;
+  background-color: #ff5b27;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 200;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.btn-login:hover {
+  opacity: 0.88;
+}
+
+.btn-login:active {
+  transform: translateY(0);
+}
+
+/* ---------- Or Divider ---------- */
+.or-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+  color: #bbb;
+  font-size: 13px;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+/* ---------- Google Button ---------- */
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.55rem 1rem;
+  border: 1.5px solid #ddd;
+  border-radius: 32px;
+  background: #ffffff;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-google:hover {
+  background: #f8f4ff;
+  border-color: #ced4da;
+}
+
+/* ---------- Report Issue ---------- */
+.report-text {
+  font-size: 11.5px;
+  color: #aaa;
+  margin-top: 0.8rem;
+  margin-bottom: 0;
+}
+
+.signup-link {
+  color: #1d9e75;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Floating Buttons ---------- */
+.floating-btns {
+  position: fixed;
+  bottom: 1.4rem;
+  right: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 999;
+}
+
+.float-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background-color: #1d9e75;
+  color: #fff;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(97, 32, 161, 0.35);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.float-btn:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo {
+  width: 105px;
+  height: 112px;
+  margin: -20px auto 0;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100%;
+
+  margin-bottom: 15px;
+}
+
+@media (max-width: 991px) {
+  .left-bg {
+    min-height: 260px;
+    padding: 2rem 1rem;
+  }
+
+  .brand-title {
+    font-size: 1.6rem;
+  }
+
+  .right-panel {
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .btn-signup-con {
+    margin-top: 15px;
+  }
+}
+
+/* Wizard Styling */
+.step-wizard-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0;
+  list-style: none;
+}
+
+.step-wizard-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* The Line */
+.step-wizard-item::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #e0e0e0;
+  top: 10px;
+  left: 100%;
+  z-index: 1;
+}
+
+/* The Line */
+.step-wizard-item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #e0e0e0;
+  top: 10px;
+  left: 0%;
+  z-index: 1;
+}
+
+.step-wizard-item:last-child::after {
+  display: none;
+}
+
+.step-wizard-item:first-child {
+  align-items: flex-start;
+}
+
+.step-wizard-item:last-child {
+  align-items: flex-end;
+}
+
+/* Circles */
+.progress-count {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #c0c0c0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+}
+
+.progress-label {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
+  color: #c0c0c0;
+  margin-top: 8px;
+}
+
+/* Active State */
+.step-wizard-item.active .progress-count {
+  background: #ff5e21;
+}
+.step-wizard-item.active .progress-label {
+  color: #ff5e21;
+}
+
+/*FORM BACK BUTTON ------------------------------------------------*/
+.form-back-btn {
+  background-color: white !important;
+  border-radius: 32px !important;
+  border: 1px solid #b8b8b8 !important;
+  color: #b8b8b8;
+}
+
+/*FORM INVALID USER ------------------------------------------------*/
+/* Custom animation for the floating alert */
+/* Ensure the alert is visible and positioned correctly */
+.alert.position-absolute {
+  animation: slideDownFade 0.5s ease-out forwards, shake 0.5s ease-in-out;
+  opacity: 0; /* Start invisible */
+  z-index: 1050; /* Ensure it stays above the form */
+  position: absolute; /* Ensure it's positioned absolutely */
+  top: 10%; /* Adjust as needed */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, 0); /* Center the alert */
+}
+
+/* Slide down and fade in animation */
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px); /* Start slightly higher */
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0); /* End at its natural position */
+  }
+}
+
+/* Shake animation */
+@keyframes shake {
+  0%, 100% {
+    transform: translate(-50%, 0); /* Centered */
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate(-50%, -5px); /* Move slightly left */
+  }
+  20%, 40%, 60%, 80% {
+    transform: translate(-50%, 5px); /* Move slightly right */
+  }
+}

@@ -1,2 +1,1 @@
-# MediFind_RocketLabs
- 
+# MediFind-RocketLabs
