@@ -17,8 +17,8 @@
 
         <div class="collapse navbar-collapse" id="navbarToggler">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-5 me-4">
-            <li class="nav-item"><a class="nav-link" href="landing-page.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.php">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="#">FAQs</a></li>
           </ul>
 
