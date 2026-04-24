@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../07_Assets/images/logo.png" type="image/png" />
-    <title>Dashboard</title>
+    <title>Pharmacy Dashboard</title>
 
     <!-- Bootstrap and Js Framework -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,6 @@
 
     <!-- Page Transition -->
     <?php include '../01_Includes/page-transition.php'; ?>
-
 </head>
 
 <body>

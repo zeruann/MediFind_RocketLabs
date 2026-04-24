@@ -52,8 +52,9 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="../07_Assets/css/Auth-style.css" rel="stylesheet">
-    <link href="../07_Assets/css/navbar.css" rel="stylesheet">
+    
+    <link href="../07_Assets/css/00_Global CSS/Auth-style.css" rel="stylesheet">
+    <link href="../07_Assets/css/04_Includes CSS/navbar.css" rel="stylesheet">
 
     <?php include '../01_Includes/page-transition.php'; ?>
 

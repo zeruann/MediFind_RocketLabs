@@ -20,10 +20,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"rel="stylesheet"/>
   
     <!-- Assets -->
-     
-    <link rel="stylesheet" href="07_Assets/css/login-user-role.css"/>
-    <link rel="stylesheet" href="07_Assets/css/navbar.css"/>
-    
+    <link href="07_Assets/css/00_Global CSS/login-user-role.css" rel="stylesheet">
+    <link href="07_Assets/css/04_Includes CSS/navbar.css" rel="stylesheet">
+
     <link rel="stylesheet" href="07_Assets/node_modules/material-symbols/outlined.css" />
 
     <!-- Transition Includes -->
