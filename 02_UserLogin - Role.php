@@ -1,7 +1,7 @@
 <!doctype html>
 
 <html lang="en" data-swup-theme  >
-  <head data-swup-theme  >
+  <head data-swup-theme>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="07_Assets/images/logo.png" type="image/png" />
@@ -49,17 +49,16 @@
         </p>
 
         <div class="btn-stack">
-          <a href="#" class="card-btn card-btn-primary">
-             Patient
+        <a href="03_Authentication/login.php" class="card-btn card-btn-primary">
+        Patient
           </a>
-          <a href="#" class="card-btn card-btn-primary">
+          <a href="03_Authentication/login.php" class="card-btn card-btn-primary">
              Pharmacy Admin
           </a>
-          <a href="#" class="card-btn card-btn-primary">
+          <a href="03_Authentication/login.php" class="card-btn card-btn-primary">
              System Admin
           </a>
         </div>
-
 
       </div>
     </main>
