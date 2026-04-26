@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="is-animating">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../07_Assets/node_modules/material-symbols/outlined.css" />
     <link rel="stylesheet" href="../07_Assets/css/01_PatientUser CSS/medicinemap.css"/>
 
+    <!-- Page transition -->
+    <?php include '../01_Includes/page-transition-hardcode.php'?>
   </head>
   <body>
     <div class="wrapper">
