@@ -7,6 +7,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email    = trim($_POST['email']);
     $password = trim($_POST['password']);
 
+    // ─── 0. Verify reCAPTCHA ──────────────────────────────────────
+    $recaptcha_token = $_POST['g-recaptcha-response'] ?? '';
+
+    if (empty($recaptcha_token)) {
+        $_SESSION['error'] = "Please complete the reCAPTCHA.";
+        header('Location: ../03_Authentication/login.php');
+        exit;
+    }
+
+    $verify = file_get_contents(
+        'https://www.google.com/recaptcha/api/siteverify?secret='
+            . RECAPTCHA_SECRET_KEY
+            . '&response=' . urlencode($recaptcha_token)
+            . '&remoteip=' . urlencode($_SERVER['REMOTE_ADDR'])
+    );
+
+    $result = json_decode($verify, true);
+
+    if (!$result['success']) {
+        $_SESSION['error'] = "reCAPTCHA failed. Please try again.";
+        header('Location: ../03_Authentication/login.php');
+        exit;
+    }
+
     try {
         // ─── 1. Fetch user from view_01_users ─────────────────────────
         $stmt = $pdo->prepare("
@@ -59,12 +83,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['full_name']  = $user['First_name'] . ' ' . $user['Middle_name'] . ' ' . $user['Last_name'];
         $_SESSION['role_id']    = $user['Role_ID'];
         $_SESSION['role_label'] = $user['Role'];
-        $_SESSION['profile_pic']= $user['Profilepic_url'];
+        $_SESSION['profile_pic'] = $user['Profilepic_url'];
         $_SESSION['Email']      = $user['Email'];
         $_SESSION['Phone']      = $user['Phone'];
-        $_SESSION['UserStatus'] = $user['UserStatus']; 
-        
-        
+        $_SESSION['UserStatus'] = $user['UserStatus'];
+
+
         // ─── 7. Fetch and store address ────────────────────────────────
         $stmtAddr = $pdo->prepare("
             SELECT Street, Barangay_Name, City_Name, Province_Name, Full_Address
@@ -105,9 +129,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['pharmacy_id']            = $pharmacy['Pharmacy_ID'];
                 $_SESSION['pharmacy_name']          = $pharmacy['Pharmacy_name'];
                 $_SESSION['inventory_id']           = $pharmacy['Inventory_ID'];
-                $_SESSION['Logo_URL']               = $pharmacy['Logo_URL']; 
-                $_SESSION['Pic_URL']                = $pharmacy['Pic_URL']; 
-                $_SESSION['Pharmacy_Approval']      = $pharmacy['Approval_ID']; 
+                $_SESSION['Logo_URL']               = $pharmacy['Logo_URL'];
+                $_SESSION['Pic_URL']                = $pharmacy['Pic_URL'];
+                $_SESSION['Pharmacy_Approval']      = $pharmacy['Approval_ID'];
             }
         }
 
@@ -119,7 +143,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 break;
 
             case ROLE_PHARMACIST:
+<<<<<<< HEAD
             case ROLE_PHARMACY_OWNER:
+=======
+              case ROLE_PHARMACY_OWNER:
+>>>>>>> fcab227739a75037fcb2012510caebc88be21021
                 // 1 = Pending, 3 = Rejected, 4 = Not Requested → setup page
                 // 2 = Approved → dashboard
                 if (in_array($_SESSION['Pharmacy_Approval'], [1, 3, 4])) {
@@ -128,15 +156,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header('Location: ../05_PharmacyAdmin/01_Dashboard.php');
                 }
                 break;
-                
+
             case ROLE_SYSTEM_ADMIN:
-                header('Location: ../06_SystemAdmin/01_Dashboard.php');
+                header('Location: ../05_PharmacyAdmin/00_RequestAccess.php');
                 break;
             default:
                 header('Location: ../03_Authentication/login.php');
         }
         exit;
-
     } catch (PDOException $e) {
         $_SESSION['error'] = "Something went wrong: " . $e->getMessage();
         header('Location: ../03_Authentication/login.php');
@@ -148,7 +175,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en" data-swup>
-  <head data-swup>
+
+<head data-swup>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../07_Assets/images/logo.png" type="image/png" />
@@ -157,7 +185,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-   
+    <link rel="stylesheet" href="../07_Assets/bootstrap/css/bootstrap.min.css" />
     <link href="../07_Assets/css/00_Global CSS/Auth-style.css" rel="stylesheet">
     <link href="../07_Assets/css/04_Includes CSS/navbar.css" rel="stylesheet">
 
@@ -234,6 +262,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <a href="forgot-password.php" class="forgotPass">Forgot Password</a>
                             </div>
 
+                            <!-- Add widget inside your form, before login button -->
+                            <div class="g-recaptcha mb-3"
+                                data-sitekey="<?= RECAPTCHA_SITE_KEY ?>">
+                            </div>
+
+
 
                             <button type="submit" class="btn-login w-100 mb-3 .rounded-pill">
                                 <i class="bi bi-box-arrow-in-right me-2"></i>
@@ -246,11 +280,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
 
                             <!-- Google login -->
-                            <button type="button" class="btn-google w-100 mb-3">
+                            <!-- ✅ Use anchor tag instead of button -->
+                            <a href="../02_Actions/01_Authentication-CRUD/google-login.php" class="btn-google w-100 mb-3 text-decoration-none d-flex align-items-center justify-content-center">
                                 <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
                                     alt="Google" width="18" class="me-2">
                                 Login with Google
-                            </button>
+                            </a>
 
                         </form>
 
@@ -271,6 +306,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="floating-btns">
         <button class="float-btn" onclick="history.back()"><i class="bi bi-arrow-left"></i></button>
     </div>
+
+    <!-- Add reCAPTCHA script in <head> -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
