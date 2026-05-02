@@ -143,11 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 break;
 
             case ROLE_PHARMACIST:
-<<<<<<< HEAD
-            case ROLE_PHARMACY_OWNER:
-=======
               case ROLE_PHARMACY_OWNER:
->>>>>>> fcab227739a75037fcb2012510caebc88be21021
                 // 1 = Pending, 3 = Rejected, 4 = Not Requested → setup page
                 // 2 = Approved → dashboard
                 if (in_array($_SESSION['Pharmacy_Approval'], [1, 3, 4])) {
