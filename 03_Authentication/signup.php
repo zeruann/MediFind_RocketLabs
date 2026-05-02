@@ -52,7 +52,7 @@ unset($_SESSION['form_data']);
 
 </head>
 
-<body>
+<body class="auth-page">
 
     <?php include_once '../01_Includes/navbar.php' ?>
 

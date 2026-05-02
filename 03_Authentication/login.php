@@ -203,7 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </head>
 
-<body>
+<body class="auth-page">
 
     <!-- Navbar -->
     <?php include_once '../01_Includes/navbar.php' ?>
