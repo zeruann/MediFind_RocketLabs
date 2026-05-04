@@ -174,7 +174,7 @@ if (!$_SESSION['user_id']) {
                       </div>
                       <span class="card-label label-green">Active Users</span>
                     </div>
-                    <div class="card-value"> <?= $totalActive ?></div>
+                    <div class="card-value"> <?= $totalActiveUsers ?></div>
                     <div class="card-sub">Estimated total</div>
                   </div>
                 </div>

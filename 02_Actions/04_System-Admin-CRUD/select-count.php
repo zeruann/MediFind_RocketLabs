@@ -14,7 +14,7 @@ $stmt = $pdo->query(
     "SELECT COUNT(*) FROM view_01_users 
      WHERE UserStatus COLLATE utf8mb4_unicode_ci = 'Active'"
 );
-$totalActive = $stmt->fetchColumn();
+$totalActiveUsers = $stmt->fetchColumn();
 
 // 2. Total Pharmacies
 $stmt = $pdo->query("SELECT COUNT(*) FROM view_04_pharmacy");
@@ -41,12 +41,11 @@ $stmt = $pdo->query(
 );
 $suspendedAccounts = $stmt->fetchColumn();
 
-
-
 // 06. Count Inventory
 $stmt = $pdo->query(
     "SELECT COUNT(*) FROM 21_inventory"
 );
 $totalInventory = $stmt->fetchColumn();
+
 ?>
 
