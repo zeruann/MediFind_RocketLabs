@@ -10,13 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Topbar</title>
     <!-- <link rel="icon" href="/07_Assets/images/logo.png" type="image/png"> -->
-    <link href="../07_Assets/bootstrap" rel="stylesheet" />
+    <!-- <link href="../07_Assets/bootstrap" rel="stylesheet" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../07_Assets/css/04_Includes CSS/topbar.css" />
-
+    <link rel="stylesheet" href="../../07_Assets/css/04_Includes CSS/topbar.css" />
+<!-- Add in <head> alongside your existing links: -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
   <body>
@@ -157,16 +158,9 @@
       </div>
     </div>
 
-    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- To CDN so it always works regardless of path: -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-      const sidebar = document.getElementById("sidebar");
-      const sidebarToggle = document.getElementById("sidebarToggle");
-
-      sidebarToggle.addEventListener("click", () => {
-        sidebar.classList.toggle("hidden"); // uses your existing #sidebar.hidden CSS
-      });
-    </script>
     
     <script>
       //  Current date

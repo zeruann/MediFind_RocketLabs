@@ -344,16 +344,15 @@
       display: none;
     }
 
-    /* ── BACKGROUND FIX ── */
+
     body.landing-page {
-      background-image: none !important;
-      background-color: #f7fdf9 !important;
+      background-image: url("07_Assets/images/auth-bg.png") !important;
     }
 
-    /* ── SECTION CONTINUITY ── */
-    .faq-section {
-      background: #f7fdf9;
-    }
+ /* ── SECTION CONTINUITY ── */
+.faq-section {
+  background: transparent;
+}
 
     .contact-strip {
       margin-top: 0;
@@ -368,7 +367,7 @@
   <?php include '01_Includes/page-transition-hardcode.php' ?>
 </head>
 
-<body class="landing-page scrollable">
+<body class="landing-page">
 
   <?php include_once '01_Includes/navbar_landing-role.php' ?>
 
