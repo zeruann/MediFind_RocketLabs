@@ -117,6 +117,30 @@ if (!$_SESSION['user_id']) {
       padding: 0.25rem 0.25rem 0.25rem 0.25rem;
       margin-bottom: 2px;
     }
+
+        /* ─────────────────────────────────────────────
+       PAGE HEADER
+    ───────────────────────────────────────────── */
+    .settings-page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.5rem 0.6rem;
+    }
+
+    .settings-page-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #212529;
+    }
+
+    .settings-page-sub {
+      font-size: 12px;
+      color: #6c757d;
+      margin-top: 2px;
+    }
+
+
   </style>
 
 </head>
@@ -144,6 +168,17 @@ if (!$_SESSION['user_id']) {
                     </button>
                 </div>
             </div> -->
+
+          <div class="settings-page-header">
+          <div>
+            <div class="settings-page-title">
+              <span class="material-symbols-outlined" style="font-size:20px; vertical-align:-4px; color:#1d9e75; margin-right:6px;">lab_profile</span>
+              System Reports
+            </div>
+            <div class="settings-page-sub">View system-wide data & statistics</div>
+          </div>
+
+        </div>
 
       <!-- ── Tabs ─────────────────────────────────────────────── -->
       <div class="report-tabs">

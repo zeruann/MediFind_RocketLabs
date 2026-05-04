@@ -83,6 +83,8 @@ try {
             u.Email,
             u.Phone,
             u.Role,
+            u.Age,
+            u.Gender,
             u.UserStatus,
             u.Profilepic_url,
             u.DateCreated,
