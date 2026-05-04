@@ -20,7 +20,7 @@ $totalActiveUsers = $stmt->fetchColumn();
 $stmt = $pdo->query("SELECT COUNT(*) FROM view_04_pharmacy");
 $totalPharmacies = $stmt->fetchColumn();
 
-// 3. Pending Pharmacies
+// 3. Pending Pharmaciesf
 $stmt = $pdo->query(
     "SELECT COUNT(*) FROM view_04_pharmacy 
      WHERE Approval_Status COLLATE utf8mb4_unicode_ci = 'Pending'"
