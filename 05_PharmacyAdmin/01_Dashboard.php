@@ -62,7 +62,7 @@ if ($approval_id != 2) {
 
 </head>
 
-<body>
+<body data-active="01">
   <div class="wrapper d-flex align-items-stretch">
     <div id="pharmacy-sidebar-container"></div>
 

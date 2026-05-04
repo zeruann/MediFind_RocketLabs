@@ -42,6 +42,7 @@ body {
 }
 
 /* ── Page Title ── */
+
 .page-title-block {
   display: flex;
   align-items: center;
@@ -65,17 +66,19 @@ body {
   color: #1d9e75;
 }
 
+
 .page-title-text h2 {
   margin: 0;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #1d9e75;
+  font-size: 1.6rem;    /* was 1.35rem */
+  font-weight: 600;       /* was 700 */
+  color: #3f444d;
+  line-height: 1.2;
 }
 
 .page-title-text p {
-  margin: 2px 0 0;
-  font-size: 0.85rem;
-  color: #9a9a9a;
+  margin: 4px 0 0;          /* was 2px */
+  font-size: 0.95rem;   /* was 0.85rem */
+  color: #919497;         /* was #9a9a9a */
 }
 
 /* ── Two-column layout ── */
@@ -219,12 +222,12 @@ body {
 
 .reader-title .green {
   color: #1d9e75;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
   font-weight: 900;
 }
 .reader-title .orange {
   color: #ff6a2a;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
   font-weight: 900;
 }
 

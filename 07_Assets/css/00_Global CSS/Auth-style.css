@@ -1,13 +1,13 @@
 body {
   min-height: 100vh;
-  background-image: url("../../images/auth-bg2.png"); 
+  background-image: url("../../images/auth-bg2.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* reCAPTCHA responsive fix */
@@ -58,19 +58,19 @@ body {
 
 .right-panel {
   background: rgba(255, 255, 255, 0.08);
-  overflow-y: auto;     /* ← allow scroll on small screens */
-  padding: 1rem 0;      /* ← breathing room top/bottom */
+  overflow-y: auto; /* ← allow scroll on small screens */
+  padding: 1rem 0; /* ← breathing room top/bottom */
 }
 .card {
   width: 400px;
   border-radius: 20px;
   border: none;
-  padding: 2rem 3rem;   /* slightly reduced padding */
+  padding: 2rem 3rem; /* slightly reduced padding */
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
   background: #ffffff;
-  height: auto;         /* ← fix: grows with content */
-  max-height: 90vh;     /* ← won't overflow the screen */
-  overflow-y: auto;     /* ← scroll if needed on small screens */
+  height: auto; /* ← fix: grows with content */
+  max-height: 90vh; /* ← won't overflow the screen */
+  overflow-y: auto; /* ← scroll if needed on small screens */
   margin-top: 25px;
 }
 
@@ -78,9 +78,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; 
-  padding: 1rem; 
-  box-sizing: border-box; 
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .card-signup {
@@ -193,7 +193,9 @@ body {
   font-weight: 200;
   cursor: pointer;
   letter-spacing: 0.3px;
-  transition: opacity 0.2s ease, transform 0.15s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.15s ease;
 }
 
 .btn-login:hover {
@@ -236,7 +238,9 @@ body {
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .btn-google:hover {
@@ -286,7 +290,9 @@ body {
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(97, 32, 161, 0.35);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .float-btn:hover {
@@ -311,9 +317,19 @@ body {
 }
 
 @media (max-width: 991px) {
+  body {
+    overflow-y: auto;
+  }
+  /* hide the left branding panel entirely on mobile */
   .left-bg {
-    min-height: 260px;
-    padding: 2rem 1rem;
+    display: none !important;
+  }
+
+  /* full width right panel */
+  .col-lg-6.right-panel {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   .brand-title {
@@ -321,13 +337,21 @@ body {
   }
 
   .right-panel {
-    padding: 2rem 1rem;
+    min-height: 100vh;
+    padding: 5rem 1rem 2rem; /* top padding accounts for navbar height */
     background: rgba(255, 255, 255, 0.55);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   .card {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
+    max-height: none; /* remove the 90vh cap on mobile */
+    overflow-y: visible;
+    margin-top: 0;
+    padding: 2rem 1.75rem;
   }
 
   .btn-signup-con {
@@ -432,7 +456,9 @@ body {
 /* Custom animation for the floating alert */
 /* Ensure the alert is visible and positioned correctly */
 .alert.position-absolute {
-  animation: slideDownFade 0.5s ease-out forwards, shake 0.5s ease-in-out;
+  animation:
+    slideDownFade 0.5s ease-out forwards,
+    shake 0.5s ease-in-out;
   opacity: 0; /* Start invisible */
   z-index: 1050; /* Ensure it stays above the form */
   position: absolute; /* Ensure it's positioned absolutely */
@@ -455,13 +481,21 @@ body {
 
 /* Shake animation */
 @keyframes shake {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(-50%, 0); /* Centered */
   }
-  10%, 30%, 50%, 70%, 90% {
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
     transform: translate(-50%, -5px); /* Move slightly left */
   }
-  20%, 40%, 60%, 80% {
+  20%,
+  40%,
+  60%,
+  80% {
     transform: translate(-50%, 5px); /* Move slightly right */
   }
 }

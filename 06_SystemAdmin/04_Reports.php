@@ -40,6 +40,7 @@ if (!$_SESSION['user_id']) {
   <link rel="stylesheet" href="../07_Assets/css/00_Global CSS/override-fonts.css" />
 
 
+
   <link rel="stylesheet" href="../07_Assets/css/01_PatientUser CSS/01_Home.css" />
   <link rel="stylesheet" href="../07_Assets/css/03_SystemAdminCSS/reports-style.css">
   <link rel="stylesheet" href="../07_Assets/css/00_Global CSS/override-body-css.css">
@@ -120,9 +121,7 @@ if (!$_SESSION['user_id']) {
 
 </head>
 
-<body>
-
-
+<body data-active="04">
 
   <div class="wrapper d-flex align-items-stretch">
     <div id="system-sidebar-container"></div>
@@ -151,7 +150,7 @@ if (!$_SESSION['user_id']) {
         <button class="rtab active" onclick="switchTab('overview', this)">Overview</button>
         <button class="rtab" onclick="switchTab('users', this)">Users</button>
         <button class="rtab" onclick="switchTab('pharmacies', this)">Pharmacies</button>
-        <button class="rtab" onclick="switchTab('inventory', this)">Inventory</button>
+        <!-- <button class="rtab" onclick="switchTab('inventory', this)">Inventory</button> -->
       </div>
 
       <!-- ── Content ──────────────────────────────────────────── -->

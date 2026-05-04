@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MediFind: Scan Prescriptions</title>
   <link rel="icon" href="../07_Assets/images/logo.png" type="image/png" />
-  <link href="../07_Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- <link href="../07_Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" /> -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../07_Assets/css/01_PatientUser CSS/scanrx.css" />
 
   <link
@@ -16,12 +17,15 @@
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../07_Assets/css/00_Global CSS/override-fonts.css" />
+
   <!-- Page transition -->
   <?php include '../01_Includes/page-transition-hardcode.php' ?>
 
 </head>
 
-<body>
+<body data-active="02">
   <div class="wrapper d-flex align-items-stretch">
     <div id="sidebar-container"></div>
 
@@ -32,9 +36,6 @@
         <div class="content-body">
           <!-- Page Title -->
           <div class="page-title-block">
-            <div class="page-title-icon">
-              <span class="material-symbols-outlined">medication</span>
-            </div>
             <div class="page-title-text">
               <h2>My Prescriptions</h2>
               <p>View your scanned prescriptions</p>

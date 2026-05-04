@@ -18,8 +18,6 @@ unset($_SESSION['form_data']);
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
     <link href="../07_Assets/css/00_Global CSS/Auth-style.css" rel="stylesheet">
     <link href="../07_Assets/css/04_Includes CSS/navbar.css" rel="stylesheet">
 
@@ -121,7 +119,7 @@ unset($_SESSION['form_data']);
                                             required>
                                     </div>
                                     <div class="col-6 col-lg-12">
-                                        <input type="tel" name="ContactNo" id="ContactNo"
+                                        <input type="number" name="ContactNo" id="ContactNo"
                                             class="form-control form-signup" placeholder="Contact Number"
                                             value="<?= htmlspecialchars($fd['ContactNo'] ?? '') ?>" required>
                                     </div>
@@ -144,9 +142,9 @@ unset($_SESSION['form_data']);
                                     </div>
                                 </div>
 
-                                <button type="button" class="btn-login w-100 mb-3 btn-signup-con"
+                                <button type="button" class="btn-login w-100 mb-3 btn-signup-con fw-medium"
                                     onclick="validateStep1()">Continue</button>
-                                <a href="../03_UserSignup - Role.php" class="btn form-back-btn w-100" type="button"
+                                <a href="../03_UserSignup - Role.php" class="btn form-back-btn w-100 fw-medium" type="button"
                                     style="margin-top: -10px;">
                                     Back
                                 </a>
@@ -187,9 +185,9 @@ unset($_SESSION['form_data']);
                                     </div>
                                 </div>
 
-                                <button type="button" class="btn-login w-100 mt-2 btn-signup-con"
+                                <button type="button" class="btn-login w-100 mt-2 btn-signup-con fw-medium"
                                     onclick="validateStep2()">Continue</button>
-                                <button type="button" class="btn form-back-btn w-100 mt-2"
+                                <button type="button" class="btn form-back-btn w-100 mt-2 fw-medium"
                                     onclick="changeStep(1)">Back</button>
                             </div>
 
@@ -226,8 +224,8 @@ unset($_SESSION['form_data']);
                                     </div>
                                 </div>
 
-                                <button type="submit" class="btn-login w-100 mt-2 btn-signup-con">Register</button>
-                                <button type="button" class="btn form-back-btn w-100 mt-2"
+                                <button type="submit" class="btn-login w-100 mt-2 btn-signup-con fw-medium">Register</button>
+                                <button type="button" class="btn form-back-btn w-100 mt-2 fw-medium"
                                     onclick="changeStep(2)">Back</button>
                             </div>
 

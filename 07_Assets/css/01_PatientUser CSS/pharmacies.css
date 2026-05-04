@@ -66,19 +66,20 @@ body {
 }
 .welcome-user {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.6rem;    /* was 1.8rem */
   font-weight: 600;
-  color: #3f444d;
+  color: #3f444d;         /* was #3f444d */
   line-height: 1.2;
 }
+
 .user-location {
   margin-top: 6px;
   display: flex;
   align-items: center;
-  gap: 6px;
-  color: #7a8088;
+  gap: 3px;          /* was 6px */
+  color: #919497;        /* was #7a8088 */
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 400;       /* was 500 */
 }
 .user-location .material-symbols-outlined {
   font-size: 1.1rem;

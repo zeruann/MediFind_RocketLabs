@@ -7,15 +7,18 @@
   <title>MediFind: Medicines</title>
 
   <link rel="icon" href="../07_Assets/images/logo.png" type="image/png" />
-  <link href="../07_Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- <link href="../07_Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" /> -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../07_Assets/css/01_PatientUser CSS/medicines.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../07_Assets/css/00_Global CSS/override-fonts.css" />
 
   <!-- Page transition -->
   <?php include '../01_Includes/page-transition-hardcode.php' ?>
 
 </head>
 
-<body>
+<body data-active="03">
   <div class="wrapper d-flex align-items-stretch">
     <div id="sidebar-container"></div>
 
@@ -199,7 +202,7 @@
                       <p class="medicine-meta">Tablet · Analgesic</p>
                       <p class="medicine-price">
                         ₱7.50 <span>/ tablet</span>
-                      </p> 
+                      </p>
                       <span class="medicine-tag no-rx">No Rx</span>
 
                       <a
