@@ -198,7 +198,7 @@ if (!$_SESSION['user_id']) {
   </style>
 </head>
 
-<body>
+<body data-active="03">
   <div class="wrapper d-flex align-items-stretch">
     <div id="system-sidebar-container"></div>
 

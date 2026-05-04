@@ -1,42 +1,42 @@
 <?php
-        include_once '../02_Actions/GlobalVariables.php';
-        include_once '../00_Config/config.php';
+include_once '../02_Actions/GlobalVariables.php';
+include_once '../00_Config/config.php';
 
-        // ── Guard: must be logged in ───────────────────────────────────────
-        if (!$_SESSION['user_id']) {
-            header('Location: ../03_Authentication/login.php');
-            exit;
-        }
+// ── Guard: must be logged in ───────────────────────────────────────
+if (!$_SESSION['user_id']) {
+    header('Location: ../03_Authentication/login.php');
+    exit;
+}
 
-        // ── Re-check approval status fresh from DB every load ─────────────
-        $stmt = $pdo->prepare("
+// ── Re-check approval status fresh from DB every load ─────────────
+$stmt = $pdo->prepare("
             SELECT Pharmacy_name, Owner_name, Approval_ID 
             FROM 09_pharmacies 
             WHERE User_ID = ? 
             LIMIT 1
         ");
-        $stmt->execute([$_SESSION['user_id']]);
-        $pharmacy = $stmt->fetch();
+$stmt->execute([$_SESSION['user_id']]);
+$pharmacy = $stmt->fetch();
 
-        // ── Extract values from DB result ──────────────────────────────────
-        $approval_id   = $pharmacy['Approval_ID'] ?? 4;      // ← THIS WAS MISSING
-        $pharmacy_name = $pharmacy['Pharmacy_name'] ?? '';
-        $owner_name    = $pharmacy['Owner_name'] ?? $_SESSION['full_name'];
-        $phone         = trim($_POST['phone'] ?? $_SESSION['Phone'] ?? '');
+// ── Extract values from DB result ──────────────────────────────────
+$approval_id   = $pharmacy['Approval_ID'] ?? 4;      // ← THIS WAS MISSING
+$pharmacy_name = $pharmacy['Pharmacy_name'] ?? '';
+$owner_name    = $pharmacy['Owner_name'] ?? $_SESSION['full_name'];
+$phone         = trim($_POST['phone'] ?? $_SESSION['Phone'] ?? '');
 
-        // ── Always sync session with DB value ─────────────────────────────
-        $_SESSION['Pharmacy_Approval'] = $approval_id;
+// ── Always sync session with DB value ─────────────────────────────
+$_SESSION['Pharmacy_Approval'] = $approval_id;
 
-        $is_not_requested = ($approval_id == 4);
-        $is_pending       = ($approval_id == 1);
-        $is_rejected      = ($approval_id == 3);
+$is_not_requested = ($approval_id == 4);
+$is_pending       = ($approval_id == 1);
+$is_rejected      = ($approval_id == 3);
 
-        // ── If already approved — update session then redirect ────────────
-        if ($approval_id == 2) {
-            $_SESSION['pharmacy_name'] = $pharmacy['Pharmacy_name'] ?? null;
-            header('Location: ../05_PharmacyAdmin/01_Dashboard.php');
-            exit;
-        }
+// ── If already approved — update session then redirect ────────────
+if ($approval_id == 2) {
+    $_SESSION['pharmacy_name'] = $pharmacy['Pharmacy_name'] ?? null;
+    header('Location: ../05_PharmacyAdmin/01_Dashboard.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,6 +46,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediFind | Setup Pharmacy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../07_Assets/css/00_Global CSS/override-fonts.css" />
 
     <link rel="icon" href="../07_Assets/images/logo.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">

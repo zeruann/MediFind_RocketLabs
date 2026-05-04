@@ -7,15 +7,19 @@
   <title>MediFind: Pharmacies</title>
 
   <link rel="icon" href="../07_Assets/images/logo.png" type="image/png" />
-  <link href="../07_Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- <link href="../07_Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" /> -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../07_Assets/css/01_PatientUser CSS/pharmacies.css" />
-  
+
   <!-- Page transition -->
-  <?php include '../01_Includes/page-transition-hardcode.php'?>
+  <?php include '../01_Includes/page-transition-hardcode.php' ?>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../07_Assets/css/00_Global CSS/override-fonts.css" />
 
 </head>
 
-<body>
+<body data-active="04">
   <div class="wrapper d-flex align-items-stretch">
     <div id="sidebar-container"></div>
 
@@ -275,7 +279,7 @@
                   </div>
                 </div>
 
-                
+
 
                 <div class="detail-meta">
                   <div class="detail-meta-item">
@@ -300,7 +304,7 @@
               </div>
             </div>
 
-            
+
 
             <!-- RIGHT PANEL: Map -->
             <div class="right-panel" id="map-panel" style="display: none">
@@ -312,7 +316,7 @@
     </div>
   </div>
 
- <!-- =============================================
+  <!-- =============================================
        CHAT PANEL
        ============================================= -->
   <div class="chat-panel hidden" id="chatPanel">
@@ -377,7 +381,7 @@
     </button>
   </div>
 
-    <!-- =============================================
+  <!-- =============================================
        CHAT SCRIPT
        ============================================= -->
   <script>
@@ -496,7 +500,6 @@
         replyIdx++;
       }, 1100);
     }
-
   </script>
 
   <script src="../07_Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
