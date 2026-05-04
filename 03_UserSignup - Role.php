@@ -28,8 +28,11 @@
 
   <link rel="stylesheet" href="07_Assets/node_modules/material-symbols/outlined.css" />
 
-  <!-- Page transition -->
-  <?php include '01_Includes/page-transition-hardcode.php' ?>
+      <!-- Transition Includes -->
+    <?php include '01_Includes/page-transition.php'; ?>
+
+  </head>
+  <body >
 
 </head>
 

@@ -1079,7 +1079,6 @@ body::-webkit-scrollbar {
   opacity: 0.9;
   margin: 0;
 }
-
 /* ── BACKGROUND FIX ── */
 body.landing-page {
   background-image: none !important;

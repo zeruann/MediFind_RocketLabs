@@ -372,7 +372,7 @@
   <?php include '01_Includes/page-transition-hardcode.php' ?>
 </head>
 
-<body class="landing-page scrollable">
+<body class="landing-page">
 
   <?php include_once '01_Includes/navbar_landing-role.php' ?>
 
