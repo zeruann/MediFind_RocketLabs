@@ -131,7 +131,7 @@ if (!$_SESSION['user_id']) {
 
 </head>
 
-<body>
+<body data-active="06">
 
   <div class="wrapper d-flex align-items-stretch">
     <div id="pharmacy-sidebar-container"></div>

@@ -194,7 +194,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../07_Assets/bootstrap/css/bootstrap.min.css" />
     <link href="../07_Assets/css/00_Global CSS/Auth-style.css" rel="stylesheet">
     <link href="../07_Assets/css/04_Includes CSS/navbar.css" rel="stylesheet">
 
@@ -281,7 +280,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
 
 
-                            <button type="submit" class="btn-login w-100 mb-3 .rounded-pill">
+                            <button type="submit" class="btn-login w-100 mb-3 .rounded-pill fw-medium">
                                 <i class="bi bi-box-arrow-in-right me-2"></i>
                                 Login
                             </button>
@@ -322,9 +321,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Add reCAPTCHA script in <head> -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
         function togglePassword() {
             const input = document.getElementById('passwordInput');

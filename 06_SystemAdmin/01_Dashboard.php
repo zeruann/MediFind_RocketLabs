@@ -116,9 +116,13 @@ if (!$_SESSION['user_id']) {
     }
   </style>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../07_Assets/css/00_Global CSS/override-fonts.css" />
+
+
 </head>
 
-<body>
+<body data-active="01">
   <div class="wrapper d-flex align-items-stretch">
     <div id="system-sidebar-container"></div>
 
@@ -126,120 +130,94 @@ if (!$_SESSION['user_id']) {
       <div id="topbar-container"></div>
 
       <div class="content">
-        <div class="content-inventory px-3">
+        <div class="content-inventory px-3 py-3">
 
           <!-- ══ STAT CARDS ═════════════════════════════════════ -->
-
-          <div class="hero" id="statsHero">
-            <div style="padding: 1rem 0;">
-              <div class="row g-3">
-
-                <div class="col-12 col-sm-6 col-xl-3">
-                  <div class="stat-card">
-                    <div class="card-header-row">
-                      <div class="card-icon icon-green">
-
-                        <span class="material-symbols-outlined">supervisor_account</span>
-                      </div>
-                      <span class="card-label label-green">Total Users</span>
-                    </div>
-                    <div class="card-value"><?= $totalUsers ?></div>
-                    <div class="d-flex align-items-center gap-2">
-                      <span class="badge-up">
-                      <i class="bi bi-arrow-up-short"></i> <?= $newUsersMonth ?> 
-                      </span>
-                      <span class="card-sub">this month</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-xl-3">
-                  <div class="stat-card">
-                    <div class="card-header-row">
-                      <div class="card-icon icon-green">
-                        <span class="material-symbols-outlined">admin_meds</span>
-                      </div>
-                      <span class="card-label label-green">Pharmacy Users</span>
-                    </div>
-                    <div class="card-value"><?= $totalPharmacies ?></div>
-                    <div class="card-sub">Below threshold</div>
-                  </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-xl-3">
-                  <div class="stat-card">
-                    <div class="card-header-row">
-                      <div class="card-icon icon-green">
-                        <span class="material-symbols-outlined">check_circle_unread</span>
-                      </div>
-                      <span class="card-label label-green">Active Users</span>
-                    </div>
-                    <div class="card-value"> <?= $totalActiveUsers ?></div>
-                    <div class="card-sub">Estimated total</div>
-                  </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-xl-3">
-                  <div class="stat-card">
-                    <div class="card-header-row">
-                      <div class="card-icon icon-green">
-                        <span class="material-symbols-outlined">do_not_disturb_on</span>
-                      </div>
-                      <span class="card-label label-green">Pending Requests</span>
-                    </div>
-                    <div class="card-value"><?= $pendingPharmaciesDash?></div>
-                    <div class="card-sub">Within 30 days</div>
-                  </div>
-                </div>
-
-
-              </div>
-            </div>
-          </div>
-
-          <div style="padding: 1rem 0;">
+          <div class="hero mb-3" id="statsHero">
             <div class="row g-3">
 
-          <!-- GRAPHS -->
-          <div style="padding: 1rem 0;">
-            <div class="row g-3">
-
-              <!-- Total Medicines -->
-              <div class="col-12 col-sm-12 col-xl-6">
+              <div class="col-12 col-sm-6 col-xl-3">
                 <div class="stat-card">
-                  <?php include '../02_Actions/04_System-Admin-CRUD/pie-chart-systemaAd.php'; ?>
-
+                  <div class="card-header-row">
+                    <div class="card-icon icon-green">
+                      <span class="material-symbols-outlined">supervisor_account</span>
+                    </div>
+                    <span class="card-label label-green">Total Users</span>
+                  </div>
+                  <div class="card-value"><?= $totalUsers ?></div>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge-up"><i class="bi bi-arrow-up-short"></i> <?= $newUsersMonth ?></span>
+                    <span class="card-sub">this month</span>
+                  </div>
                 </div>
               </div>
 
-
-              <!-- Calendar -->
-              <div class="col-11 col-sm-12 col-xl-6" style="height: 100%;">
-                <div class="stat-card calendar-widget">
-                  <h6 class="mb-3">Calendar</h6>
-                  <?php include '../02_Actions/04_System-Admin-CRUD/calendar-widget.html'; ?>
+              <div class="col-12 col-sm-6 col-xl-3">
+                <div class="stat-card">
+                  <div class="card-header-row">
+                    <div class="card-icon icon-green">
+                      <span class="material-symbols-outlined">admin_meds</span>
+                    </div>
+                    <span class="card-label label-green">Pharmacy Users</span>
+                  </div>
+                  <div class="card-value"><?= $totalPharmacies ?></div>
+                  <div class="card-sub">Below threshold</div>
                 </div>
               </div>
 
+              <div class="col-12 col-sm-6 col-xl-3">
+                <div class="stat-card">
+                  <div class="card-header-row">
+                    <div class="card-icon icon-green">
+                      <span class="material-symbols-outlined">check_circle_unread</span>
+                    </div>
+                    <span class="card-label label-green">Active Users</span>
+                  </div>
+                  <div class="card-value"><?= $totalActiveUsers ?></div>
+                  <div class="card-sub">Estimated total</div>
+                </div>
+              </div>
 
+              <div class="col-12 col-sm-6 col-xl-3">
+                <div class="stat-card">
+                  <div class="card-header-row">
+                    <div class="card-icon icon-green">
+                      <span class="material-symbols-outlined">do_not_disturb_on</span>
+                    </div>
+                    <span class="card-label label-green">Pending Requests</span>
+                  </div>
+                  <div class="card-value"><?= $pendingPharmaciesDash ?></div>
+                  <div class="card-sub">Within 30 days</div>
+                </div>
+              </div>
 
             </div>
           </div>
+          <!-- ══ END STAT CARDS ════════════════════════════════ -->
 
+          <!-- ══ GRAPHS ════════════════════════════════════════ -->
+          <div class="row g-3">
 
-
+            <div class="col-12 col-xl-6">
+              <div class="stat-card h-100">
+                <?php include '../02_Actions/04_System-Admin-CRUD/pie-chart-systemaAd.php'; ?>
+              </div>
             </div>
+
+            <div class="col-12 col-xl-6">
+              <div class="stat-card h-100 calendar-widget">
+                <h6 class="mb-3">Calendar</h6>
+                <?php include '../02_Actions/04_System-Admin-CRUD/calendar-widget.html'; ?>
+              </div>
+            </div>
+
           </div>
+          <!-- ══ END GRAPHS ════════════════════════════════════ -->
 
         </div>
-
       </div>
     </div>
   </div>
-
-
-  </div>
-
 
 
   <!-- ── Stats Toggle Script ─────────────────────────────────── -->

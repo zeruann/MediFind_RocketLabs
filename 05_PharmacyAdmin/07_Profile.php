@@ -7,7 +7,6 @@ if (!$_SESSION['user_id']) {
   exit;
 }
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -17,22 +16,30 @@ if (!$_SESSION['user_id']) {
   <title>MediFind: Profile</title>
 
   <link rel="icon" href="../07_Assets/images/logo.png" type="image/png" />
-  <link href="../07_Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- <link href="../07_Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" /> -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../07_Assets/css/04_Includes CSS/topbar.css" />
+  <link rel="stylesheet" href="../07_Assets/css/04_Includes CSS/sidebar.css" />
   <link rel="stylesheet" href="../07_Assets/css/01_PatientUser CSS/profile.css" />
+  <link rel="stylesheet" href="../07_Assets/css/00_Global CSS/override-fonts.css" />
 
-  <!-- Page transition -->
   <?php include '../01_Includes/page-transition-hardcode.php' ?>
 </head>
 
-<body>
+<body data-active="07">
   <div class="wrapper d-flex align-items-stretch">
+
     <div id="pharmacy-sidebar-container"></div>
 
     <div class="main-panel d-flex flex-column flex-grow-1">
       <div id="topbar-container"></div>
 
-      <?php include '../04_User/User-Profiles.php' ?>
-      
+      <div id="content">
+        <div class="content-body">
+          <?php include '../04_User/User-Profiles.php' ?>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -40,7 +47,7 @@ if (!$_SESSION['user_id']) {
   <script src="../07_Assets/css/js/sidebar_and_topbar.js"></script>
 
   <script>
-    // ── Tab switching ──────────────────────────────────────────────────
+    // Tab switching
     document.querySelectorAll(".tab-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         const target = btn.dataset.tab;
@@ -51,21 +58,18 @@ if (!$_SESSION['user_id']) {
       });
     });
 
-    // ── Auto-dismiss alerts after 4 seconds ───────────────────────────
-    document.querySelectorAll('.alert').forEach(function (alert) {
-      setTimeout(function () {
-        var bsAlert = new bootstrap.Alert(alert);
-        bsAlert.close();
+    // Auto-dismiss alerts
+    document.querySelectorAll('.alert').forEach(function(alert) {
+      setTimeout(function() {
+        new bootstrap.Alert(alert).close();
       }, 4000);
     });
-  </script>
 
-  <script>
+    // Address dropdowns
     const savedProvinceName = "<?= htmlspecialchars($_SESSION['Province_Name'] ?? '') ?>";
     const savedCityName = "<?= htmlspecialchars($_SESSION['City_Name'] ?? '') ?>";
     const savedBarangayName = "<?= htmlspecialchars($_SESSION['Barangay_Name'] ?? '') ?>";
 
-    // ── Load provinces on page load ──────────────────────────────
     fetch('../02_Actions/01_Authentication-CRUD/get_address.php?type=province')
       .then(r => r.json())
       .then(data => {
@@ -76,20 +80,17 @@ if (!$_SESSION['user_id']) {
           opt.textContent = p.Province_Name;
           if (p.Province_Name === savedProvinceName) {
             opt.selected = true;
-            // Auto-load cities for saved province
             loadCities(p.Province_ID);
           }
           sel.appendChild(opt);
         });
       });
 
-    // ── Load cities ───────────────────────────────────────────────
     function loadCities(provinceId) {
       const citySelect = document.getElementById('City_ID');
       const brgySelect = document.getElementById('Barangay_ID');
       citySelect.innerHTML = '<option value="" disabled selected>Select City</option>';
       brgySelect.innerHTML = '<option value="" disabled selected>Select Barangay</option>';
-
       fetch(`../02_Actions/01_Authentication-CRUD/get_address.php?type=city&province_id=${provinceId}`)
         .then(r => r.json())
         .then(data => {
@@ -99,7 +100,6 @@ if (!$_SESSION['user_id']) {
             opt.textContent = c.City_Name;
             if (c.City_Name === savedCityName) {
               opt.selected = true;
-              // Auto-load barangays for saved city
               loadBarangays(c.City_ID);
             }
             citySelect.appendChild(opt);
@@ -107,11 +107,9 @@ if (!$_SESSION['user_id']) {
         });
     }
 
-    // ── Load barangays ────────────────────────────────────────────
     function loadBarangays(cityId) {
       const brgySelect = document.getElementById('Barangay_ID');
       brgySelect.innerHTML = '<option value="" disabled selected>Select Barangay</option>';
-
       fetch(`../02_Actions/01_Authentication-CRUD/get_address.php?type=barangay&city_id=${cityId}`)
         .then(r => r.json())
         .then(data => {
@@ -125,20 +123,14 @@ if (!$_SESSION['user_id']) {
         });
     }
 
-    // ── Province change ───────────────────────────────────────────
-    document.getElementById('Province_ID').addEventListener('change', function () {
+    document.getElementById('Province_ID').addEventListener('change', function() {
       loadCities(this.value);
     });
-
-    // ── City change ───────────────────────────────────────────────
-    document.getElementById('City_ID').addEventListener('change', function () {
+    document.getElementById('City_ID').addEventListener('change', function() {
       loadBarangays(this.value);
     });
-  </script>
 
-
-  <!-- TOGGLE PASSWORD -->
-  <script>
+    // Password toggle
     function togglePw(inputId, showId, hideId) {
       var input = document.getElementById(inputId);
       var isHidden = input.type === 'password';
@@ -146,13 +138,22 @@ if (!$_SESSION['user_id']) {
       document.getElementById(showId).style.display = isHidden ? 'none' : 'block';
       document.getElementById(hideId).style.display = isHidden ? 'block' : 'none';
     }
+
     function checkMatch() {
       var p1 = document.getElementById('pw1').value;
       var p2 = document.getElementById('pw2').value;
       var msg = document.getElementById('match-msg');
-      if (!p2) { msg.textContent = ''; return; }
-      if (p1 === p2) { msg.textContent = 'Passwords match'; msg.style.color = 'green'; }
-      else { msg.textContent = 'Passwords do not match'; msg.style.color = 'red'; }
+      if (!p2) {
+        msg.textContent = '';
+        return;
+      }
+      if (p1 === p2) {
+        msg.textContent = 'Passwords match';
+        msg.style.color = 'green';
+      } else {
+        msg.textContent = 'Passwords do not match';
+        msg.style.color = 'red';
+      }
     }
   </script>
 </body>

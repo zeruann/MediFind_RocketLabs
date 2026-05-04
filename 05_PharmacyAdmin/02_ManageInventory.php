@@ -33,6 +33,8 @@ $stmt->execute([$pharmacyID]);
   <title>Manage Inventory</title>
 
   <script src="../07_Assets/css/js/sidebar_and_topbar.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../07_Assets/css/00_Global CSS/override-fonts.css" />
 
   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
@@ -199,7 +201,7 @@ $stmt->execute([$pharmacyID]);
   </style>
 </head>
 
-<body>
+<body data-active="02">
   <div class="wrapper d-flex align-items-stretch">
     <div id="pharmacy-sidebar-container"></div>
 

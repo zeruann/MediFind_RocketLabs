@@ -1,42 +1,51 @@
 /* BASE RESET & LAYOUT */
-html,
-body {
+html, body {
   height: 100%;
   margin: 0;
-  overflow: hidden;
+  overflow: hidden; /* ← lock the page itself */
   background: #f5f6f8;
   font-family: "Poppins", sans-serif;
 }
 
 .wrapper {
-  height: 100vh;
-  overflow: hidden;
+  height: 100vh;        /* ← fill the viewport exactly */
+  overflow: hidden;     /* ← prevent wrapper from scrolling */
+  position: relative;
 }
 
 #sidebar-container {
   height: 100vh;
   flex-shrink: 0;
-  overflow-y: auto;
+  overflow-y: auto;     /* ← sidebar scrolls independently if needed */
   overflow-x: hidden;
+}
+/* Lower the profile content's stacking context */
+.profile-header-card,
+.profile-info-card,
+.profile-tabs-nav,
+.profile-tab-content {
+  position: relative;
+  z-index: 1;           /* below topbar dropdowns */
 }
 
 .main-panel {
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
+  height: 100vh;        /* ← constrain the right column too */
+  overflow: hidden;     /* ← don't let main-panel itself scroll */
+  position: relative;
 }
 
+
 #topbar-container {
-  flex-shrink: 0;
-  overflow: hidden;
+  position: relative;
+  z-index: 1050;
+  flex-shrink: 0;       /* ← topbar never shrinks */
 }
+
 
 #content {
   flex: 1;
-  min-height: 0;
-  overflow-y: auto;
+  min-height: 0;        /* ← critical for flex children to scroll correctly */
+  overflow-y: auto;     /* ← ONLY this scrolls */
   overflow-x: hidden;
 }
 
@@ -491,4 +500,14 @@ body {
   gap: 20px;
   font-size: 0.85rem;
   color: #aaa;
+}
+
+/* Fix topbar dropdown clipping */
+.main-panel {
+  overflow: visible;
+}
+
+#topbar-container {
+  position: relative;
+  z-index: 1050;
 }
