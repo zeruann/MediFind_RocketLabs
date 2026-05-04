@@ -11,8 +11,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
   <link href="07_Assets/css/00_Global CSS/landing-style2.css" rel="stylesheet" />
   <link href="07_Assets/css/04_Includes CSS/navbar.css" rel="stylesheet" />
@@ -345,10 +347,12 @@
     }
 
     /* ── BACKGROUND FIX ── */
-    body.landing-page {
-      background-image: none !important;
-      background-color: #f7fdf9 !important;
-    }
+    
+      body.landing-page {
+        background-image: url("07_Assets/images/auth-bg.png") !important;
+      }
+
+    
 
     /* ── SECTION CONTINUITY ── */
     .faq-section {
@@ -406,7 +410,8 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>MediFind is a free, web-based platform that helps residents of Malaybalay, Bukidnon quickly check which local pharmacies have specific medicines available in stock — before making the trip.</p>
+          <p>MediFind is a free, web-based platform that helps residents of Malaybalay, Bukidnon quickly check which
+            local pharmacies have specific medicines available in stock — before making the trip.</p>
         </div>
       </div>
 
@@ -416,7 +421,9 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>Yes, MediFind is completely free for all users. You can search for medicine availability without even creating an account. Signing up is optional but unlocks additional features like notifications and search history.</p>
+          <p>Yes, MediFind is completely free for all users. You can search for medicine availability without even
+            creating an account. Signing up is optional but unlocks additional features like notifications and search
+            history.</p>
         </div>
       </div>
 
@@ -426,7 +433,8 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>Currently, MediFind covers pharmacies within Malaybalay City, Bukidnon. We plan to expand coverage to other municipalities in Bukidnon in the future.</p>
+          <p>Currently, MediFind covers pharmacies within Malaybalay City, Bukidnon. We plan to expand coverage to other
+            municipalities in Bukidnon in the future.</p>
         </div>
       </div>
 
@@ -436,7 +444,9 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>With MediFind, you can check multiple pharmacies at once in seconds — no need to call each one individually. Our platform also supports smart search by generic name, brand name, or even partial spelling, so you always get the most relevant results.</p>
+          <p>With MediFind, you can check multiple pharmacies at once in seconds — no need to call each one
+            individually. Our platform also supports smart search by generic name, brand name, or even partial spelling,
+            so you always get the most relevant results.</p>
         </div>
       </div>
     </div>
@@ -451,7 +461,9 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>Simply type the medicine name in the search bar on the homepage. You can use the brand name, generic name, or even a partial spelling. MediFind's AI-powered search will match and display relevant results along with which pharmacies carry it.</p>
+          <p>Simply type the medicine name in the search bar on the homepage. You can use the brand name, generic name,
+            or even a partial spelling. MediFind's AI-powered search will match and display relevant results along with
+            which pharmacies carry it.</p>
         </div>
       </div>
 
@@ -461,7 +473,9 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>Yes! MediFind supports searching by generic names (e.g., "amoxicillin"), brand names (e.g., "Amoxil"), and even partial or misspelled names. Our AI search is designed to understand and suggest the most relevant matches.</p>
+          <p>Yes! MediFind supports searching by generic names (e.g., "amoxicillin"), brand names (e.g., "Amoxil"), and
+            even partial or misspelled names. Our AI search is designed to understand and suggest the most relevant
+            matches.</p>
         </div>
       </div>
 
@@ -471,7 +485,9 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>Stock information is updated directly by partner pharmacies. Availability is as accurate as the data provided by each pharmacy. We encourage pharmacies to update their inventory regularly, but we recommend calling ahead to confirm for critical medicines.</p>
+          <p>Stock information is updated directly by partner pharmacies. Availability is as accurate as the data
+            provided by each pharmacy. We encourage pharmacies to update their inventory regularly, but we recommend
+            calling ahead to confirm for critical medicines.</p>
         </div>
       </div>
 
@@ -481,7 +497,8 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>If a medicine isn't found, you can sign up for a notification alert. Once you create an account and save the medicine to your watchlist, we'll notify you when it becomes available at a nearby pharmacy.</p>
+          <p>If a medicine isn't found, you can sign up for a notification alert. Once you create an account and save
+            the medicine to your watchlist, we'll notify you when it becomes available at a nearby pharmacy.</p>
         </div>
       </div>
     </div>
@@ -496,7 +513,9 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>No account is required to search for medicines or browse nearby pharmacies. Creating a free account unlocks additional features like saving searches, receiving availability notifications, and viewing your history.</p>
+          <p>No account is required to search for medicines or browse nearby pharmacies. Creating a free account unlocks
+            additional features like saving searches, receiving availability notifications, and viewing your history.
+          </p>
         </div>
       </div>
 
@@ -506,7 +525,8 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>Yes. Your search history is private and tied only to your account. We never sell or share your personal data with third parties. You can delete your search history at any time from your account settings.</p>
+          <p>Yes. Your search history is private and tied only to your account. We never sell or share your personal
+            data with third parties. You can delete your search history at any time from your account settings.</p>
         </div>
       </div>
 
@@ -516,7 +536,9 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>You can delete your account at any time from your account settings page. All your personal data and search history will be permanently removed within 30 days. If you need help, contact us at <a href="mailto:support@medifind.ph">support@medifind.ph</a>.</p>
+          <p>You can delete your account at any time from your account settings page. All your personal data and search
+            history will be permanently removed within 30 days. If you need help, contact us at <a
+              href="mailto:support@medifind.ph">support@medifind.ph</a>.</p>
         </div>
       </div>
 
@@ -526,7 +548,8 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>On the login page, click "Forgot Password" and enter your registered email address. You'll receive a password reset link within a few minutes. Check your spam folder if you don't see it in your inbox.</p>
+          <p>On the login page, click "Forgot Password" and enter your registered email address. You'll receive a
+            password reset link within a few minutes. Check your spam folder if you don't see it in your inbox.</p>
         </div>
       </div>
     </div>
@@ -541,7 +564,8 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>Partner pharmacies log in to their dedicated pharmacy dashboard to update their medicine inventory. They can add, edit, or remove items and mark medicines as in stock, low stock, or out of stock.</p>
+          <p>Partner pharmacies log in to their dedicated pharmacy dashboard to update their medicine inventory. They
+            can add, edit, or remove items and mark medicines as in stock, low stock, or out of stock.</p>
         </div>
       </div>
 
@@ -551,7 +575,9 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>Pharmacies in Malaybalay can register by contacting us at <a href="mailto:pharmacies@medifind.ph">pharmacies@medifind.ph</a> or by clicking "Register a Pharmacy" on the homepage. The registration process is free and typically takes 1–2 business days for verification.</p>
+          <p>Pharmacies in Malaybalay can register by contacting us at <a
+              href="mailto:pharmacies@medifind.ph">pharmacies@medifind.ph</a> or by clicking "Register a Pharmacy" on
+            the homepage. The registration process is free and typically takes 1–2 business days for verification.</p>
         </div>
       </div>
 
@@ -561,7 +587,8 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>On any pharmacy card, click the "Directions" button. MediFind will open a map with turn-by-turn directions from your current location to the pharmacy.</p>
+          <p>On any pharmacy card, click the "Directions" button. MediFind will open a map with turn-by-turn directions
+            from your current location to the pharmacy.</p>
         </div>
       </div>
     </div>
@@ -576,7 +603,9 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>Scan RX is a feature that lets you photograph your prescription. MediFind's AI will read the prescription, identify all medicines listed, and automatically search for their availability at nearby pharmacies — all at once.</p>
+          <p>Scan RX is a feature that lets you photograph your prescription. MediFind's AI will read the prescription,
+            identify all medicines listed, and automatically search for their availability at nearby pharmacies — all at
+            once.</p>
         </div>
       </div>
 
@@ -586,7 +615,9 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>Prescription images are processed in real time and are not permanently stored on our servers after the search is completed. We take your medical privacy seriously and do not retain images beyond the active session.</p>
+          <p>Prescription images are processed in real time and are not permanently stored on our servers after the
+            search is completed. We take your medical privacy seriously and do not retain images beyond the active
+            session.</p>
         </div>
       </div>
 
@@ -596,7 +627,9 @@
           <div class="faq-toggle-icon"><span class="material-symbols-outlined">add</span></div>
         </div>
         <div class="faq-answer">
-          <p>If the scan fails, you can manually type in each medicine name in the search bar. Make sure your prescription image is well-lit and in focus for the best results. Handwritten prescriptions may have lower accuracy than printed ones.</p>
+          <p>If the scan fails, you can manually type in each medicine name in the search bar. Make sure your
+            prescription image is well-lit and in focus for the best results. Handwritten prescriptions may have lower
+            accuracy than printed ones.</p>
         </div>
       </div>
     </div>
@@ -604,7 +637,8 @@
     <!-- NO RESULTS -->
     <div class="faq-no-results" id="noResults">
       <span class="material-symbols-outlined">search_off</span>
-      <p>No questions match your search. Try different keywords or <a href="mailto:support@medifind.ph">contact us</a> directly.</p>
+      <p>No questions match your search. Try different keywords or <a href="mailto:support@medifind.ph">contact us</a>
+        directly.</p>
     </div>
 
   </div>
@@ -662,7 +696,7 @@
     });
 
     // ── Live search ──
-    document.getElementById('faqSearch').addEventListener('input', function() {
+    document.getElementById('faqSearch').addEventListener('input', function () {
       const q = this.value.toLowerCase().trim();
       document.querySelectorAll('.faq-cat-btn').forEach(b => b.classList.remove('active'));
       document.querySelector('[data-cat="all"]').classList.add('active');

@@ -24,7 +24,8 @@ unset($_SESSION['form_data']);
     <link href="../07_Assets/css/04_Includes CSS/navbar.css" rel="stylesheet">
 
     <!-- Page transition -->
-    <?php include '../01_Includes/page-transition-hardcode.php' ?>
+    <!-- < ?php include '../01_Includes/page-transition-hardcode.php' ?> -->
+    <?php include '../01_Includes/page-transition.php'; ?>
 
     <style>
         .card-signup {
@@ -52,7 +53,7 @@ unset($_SESSION['form_data']);
 
 </head>
 
-<body class="auth-page">
+<body id="swup" class="transition-fade auth-page">
 
     <?php include_once '../01_Includes/navbar.php' ?>
 

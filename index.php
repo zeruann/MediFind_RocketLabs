@@ -25,7 +25,7 @@
   <?php include '01_Includes/page-transition-hardcode.php' ?>
 
   </head>
-  <body>
+  <body class="landing-page">
     
     <!-- START OF NAVBAR -->
     <?php include_once '01_Includes/navbar_landing-role.php' ?>

@@ -1083,7 +1083,7 @@ body::-webkit-scrollbar {
 /* ── BACKGROUND FIX ── */
 body.landing-page {
   background-image: none !important;
-  background-color: #ffffff !important;
+  background-image: url("../../images/auth-bg.png") !important;
 }
 
 /* ── SECTION CONTINUITY ── */
