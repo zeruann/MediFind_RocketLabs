@@ -1,10 +1,22 @@
 <?php
 // 00_Config/config.php
 
-$host   = "localhost";
-$dbname = "medifind_rocketlabs_v2_1-5";
-$user   = "root";
-$pass   = "";
+// $host   = "localhost";
+// $dbname = "medifind_rocketlabs_v2_1-5";
+// $user   = "root";
+// $pass   = "";
+
+$host = getenv("MYSQLHOST");
+$user = getenv("MYSQLUSER");
+$password = getenv("MYSQLPASSWORD");
+$database = getenv("MYSQLDATABASE");
+$port = getenv("MYSQLPORT");
+
+// MySQLi Connection
+$conn = mysqli_connect($host, $user, $password, $database, $port);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);
