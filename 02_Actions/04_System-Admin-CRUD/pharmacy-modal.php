@@ -14,7 +14,7 @@
 
             <!-- LEFT: IMAGE -->
             <div class="col-md-4 d-flex align-items-start justify-content-center">
-              <img src="../07_Assets/images/pharmacies/RosePharmacy.png" id="pharmacyPic" alt="Pharmacy Picture"
+              <img src="../07_Assets/images/pharmacies/RojonPharmacy.png" id="pharmacyPic2" alt="Pharmacy Picture"
                 style="width: 100%; max-width: 350px; height: 450px; object-fit: cover; border-radius: 16px; background: #ccc;">
             </div>
 

@@ -1,4 +1,5 @@
 <?php
+
 // Global Variable and DB Connection
 include_once '../02_Actions/GlobalVariables.php';
 include_once '../00_Config/config.php';

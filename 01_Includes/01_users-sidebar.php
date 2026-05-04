@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (isset($_POST['logout'])) {
+    $_SESSION['user_id'] = null;
+    session_destroy();
+    header('Location: ../index.php');
+    exit;
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -8,13 +19,11 @@
   <link rel="stylesheet" href="../07_Assets/node_modules/material-symbols/outlined.css" />
   <link rel="icon" href="../07_Assets/images/logo.png" type="image/png" />
   <!-- <link href="../07_Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" /> -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../07_Assets/css/04_Includes CSS/sidebar.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
 </head>
 
@@ -23,7 +32,8 @@
     <!-- Brand / Logo -->
 
     <div class="close-btn">
-      <a href="#" class="btn btn-sm" id="closeSidebar" onclick="document.getElementById('sidebar').classList.toggle('hidden')">
+      <a href="#" class="btn btn-sm" id="closeSidebar"
+        onclick="document.getElementById('sidebar').classList.toggle('hidden')">
         <span class="material-symbols-outlined">close</span>
       </a>
     </div>
@@ -43,15 +53,13 @@
     <ul class="list-unstyled sidebar-nav">
       <li>
         <a href="../04_User/01_Home.php">
-          <span
-            class="material-symbols-outlined">home</span>
+          <span class="material-symbols-outlined">home</span>
           <span class="sidebar-label">Home</span>
         </a>
       </li>
       <li>
         <a href="../04_User/02_ScanRX.php">
-          <span
-            class="material-symbols-outlined">document_scanner</span>
+          <span class="material-symbols-outlined">document_scanner</span>
           <span class="sidebar-label">Scan RX</span>
         </a>
       </li>
@@ -91,26 +99,14 @@
     </div>
   </nav>
   <!-- Logout Modal -->
-  <div
-    class="modal fade"
-    id="logoutModal"
-    tabindex="-1"
-    aria-labelledby="logoutModalLabel"
-    aria-hidden="true">
+  <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div
-        class="modal-content"
-        style="border-radius: 16px; border: none; overflow: hidden">
-        <div
-          class="modal-header"
-          style="background: #1d9e75; border: none;">
+      <div class="modal-content" style="border-radius: 16px; border: none; overflow: hidden">
+        <div class="modal-header" style="background: #1d9e75; border: none;">
           <h5 class="modal-title text-white" id="logoutModalLabel">
             <i class="fa fa-sign-out me-2"></i> Confirm Logout
           </h5>
-          <button
-            type="button"
-            class="btn-close btn-close-white"
-            data-bs-dismiss="modal"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body text-center py-4">
           <div style="font-size: 3rem; color: #1d9e75; margin-bottom: 1rem">
@@ -124,23 +120,22 @@
           </p>
         </div>
         <div class="modal-footer justify-content-center" style="border: none">
-          <button
-            type="button"
-            class="btn btn-outline-secondary px-4"
-            data-bs-dismiss="modal">
+          <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">
             Cancel
           </button>
 
-          <a
-            href="../index.php"
-            class="btn px-4 text-white"
-            style="background: #1d9e75;">Yes, Log Out</a>
+          <form method="POST" action="">
+            <button type="submit" name="logout" class="btn px-4 text-white" style="background: #1d9e75;">
+              Yes, Log Out
+            </button>
+          </form>
+
         </div>
       </div>
     </div>
   </div>
 
-  
+
   <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
     const currentPage = window.location.pathname;
@@ -154,7 +149,7 @@
     });
   </script>
 
-  
+
 </body>
 
 </html>

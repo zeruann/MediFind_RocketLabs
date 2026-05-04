@@ -1,4 +1,12 @@
 <?php
+
+// Prevent back button after logout
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+header("Expires: 0");
+
+
 // Global Variable and DB Connection
 include_once '../02_Actions/GlobalVariables.php';
 include_once '../00_Config/config.php';
@@ -6,6 +14,7 @@ include_once '../00_Config/config.php';
 require '../02_Actions/04_System-Admin-CRUD/select-count.php';
 require '../02_Actions/04_System-Admin-CRUD/display-users.php';
 require '../02_Actions/04_System-Admin-CRUD/display-users.php';
+
 
 
 

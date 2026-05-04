@@ -1,4 +1,14 @@
-<!-- filepath: /d:/xampp/htdocs/MediFind_RocketLabs/01_Includes/02_pharmacy-sidebar.php -->
+<<?php
+session_start();
+
+if (isset($_POST['logout'])) {
+    $_SESSION['user_id'] = null;
+    session_destroy();
+    header('Location: ../index.php');
+    exit;
+}
+?>
+<!-- !-- filepath: /d:/xampp/htdocs/MediFind_RocketLabs/01_Includes/02_pharmacy-sidebar.php --> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
