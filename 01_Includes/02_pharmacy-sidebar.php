@@ -1,4 +1,4 @@
-<<?php
+<?php
 session_start();
 
 if (isset($_POST['logout'])) {
@@ -8,7 +8,7 @@ if (isset($_POST['logout'])) {
     exit;
 }
 ?>
-<!-- !-- filepath: /d:/xampp/htdocs/MediFind_RocketLabs/01_Includes/02_pharmacy-sidebar.php --> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

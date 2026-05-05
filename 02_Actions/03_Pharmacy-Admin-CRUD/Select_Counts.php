@@ -21,7 +21,7 @@
         // 2. Out of Stock for this pharmacy
         $stmt = $pdo->prepare(
             "SELECT COUNT(*) FROM view_06_inventory_stocks 
-            WHERE Availability_Status COLLATE utf8mb4_unicode_ci = 'Out of Stock' 
+            WHERE Availability_Status COLLATE utf8mb4_unicode_ci = 'Low Stock' 
             AND Pharmacy_ID = ?");
         $stmt->execute([$pharmacyID]);
         $outOfStock = $stmt->fetchColumn();
@@ -38,7 +38,7 @@
         $stmt = $pdo->prepare(
             "SELECT COUNT(*) FROM view_06_inventory_stocks 
             WHERE Pharmacy_ID = ? 
-            AND Expiry_date BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 1 DAY)");
+            AND Expiry_date BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY)");
         $stmt->execute([$pharmacyID]);
         $expiringSoon = $stmt->fetchColumn();
 
