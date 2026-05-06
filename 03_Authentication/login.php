@@ -1,6 +1,6 @@
 <?php
-include_once '../02_Actions/GlobalVariables.php';
-include_once '../00_Config/config.php';
+include_once '/../02_Actions/GlobalVariables.php';
+include_once '/../00_Config/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
