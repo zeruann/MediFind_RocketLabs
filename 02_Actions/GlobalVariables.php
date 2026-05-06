@@ -10,7 +10,7 @@ use Dotenv\Dotenv;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
+$dotenv->safeLoad(); // won't crash if .env file doesn't exist
 
 // ─── RECAPTCHA KEYS ───────────────────────────────────────────────
 define('RECAPTCHA_SITE_KEY',   $_ENV['RECAPTCHA_SITE_KEY']);
