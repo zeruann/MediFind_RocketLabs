@@ -18,6 +18,9 @@
 
 // 00_Config/config.php
 
+chdir(__DIR__ . '/..');
+
+
 $host   = getenv('MYSQLHOST');
 $dbname = getenv('MYSQLDATABASE');
 $user   = getenv('MYSQLUSER');
