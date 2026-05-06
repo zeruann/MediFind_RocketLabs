@@ -1,6 +1,6 @@
 <?php
-include_once '/../02_Actions/GlobalVariables.php';
-include_once '/../00_Config/config.php';
+include_once '../02_Actions/GlobalVariables.php';
+include_once '../00_Config/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -205,7 +205,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="auth-page">
 
     <!-- Navbar -->
-    <?php include_once '/../01_Includes/navbar.php' ?>
+    <?php include_once '../01_Includes/navbar.php' ?>
 
     <div class="container-fluid vh-100 p-0">
         <div class="row h-100 g-0">
