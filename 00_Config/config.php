@@ -2,7 +2,7 @@
 // 00_Config/config.php
 
 $host   = "localhost";
-$dbname = "medifind_rocketlabs_v2_1-3";
+$dbname = "medifind_rocketlabs";
 $user   = "root";
 $pass   = "";
 
