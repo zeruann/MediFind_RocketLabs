@@ -124,7 +124,7 @@ if (isset($_POST['logout'])) {
             Cancel
           </button>
 
-          <form method="POST" action="">
+          <form method="POST" action="../index.php">
             <button type="submit" name="logout" class="btn px-4 text-white" style="background: #1d9e75;">
               Yes, Log Out
             </button>
