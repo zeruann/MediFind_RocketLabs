@@ -198,7 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="../07_Assets/css/04_Includes CSS/navbar.css" rel="stylesheet">
 
     <!-- Transition Includes -->
-    <?php include '/../01_Includes/page-transition-hardcode.php'; ?>
+    <?php include '../01_Includes/page-transition-hardcode.php'; ?>
 
 </head>
 
