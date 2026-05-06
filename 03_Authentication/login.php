@@ -198,14 +198,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="../07_Assets/css/04_Includes CSS/navbar.css" rel="stylesheet">
 
     <!-- Transition Includes -->
-    <?php include '../01_Includes/page-transition-hardcode.php'; ?>
+    <?php include '/../01_Includes/page-transition-hardcode.php'; ?>
 
 </head>
 
 <body class="auth-page">
 
     <!-- Navbar -->
-    <?php include_once '../01_Includes/navbar.php' ?>
+    <?php include_once '/../01_Includes/navbar.php' ?>
 
     <div class="container-fluid vh-100 p-0">
         <div class="row h-100 g-0">
