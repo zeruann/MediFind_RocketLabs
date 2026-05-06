@@ -23,11 +23,11 @@ error_reporting(E_ALL);
 chdir(__DIR__ . '/..');
 
 
-$host   = getenv('MYSQLHOST');
-$dbname = getenv('MYSQLDATABASE');
-$user   = getenv('MYSQLUSER');
-$pass   = getenv('MYSQLPASSWORD');
-$port   = getenv('MYSQLPORT');
+$host   = getenv('MYSQLHOST')     ?: ($_ENV['MYSQLHOST']     ?? false);
+$dbname = getenv('MYSQLDATABASE') ?: ($_ENV['MYSQLDATABASE'] ?? false);
+$user   = getenv('MYSQLUSER')     ?: ($_ENV['MYSQLUSER']     ?? false);
+$pass   = getenv('MYSQLPASSWORD') ?: ($_ENV['MYSQLPASSWORD'] ?? false);
+$port   = getenv('MYSQLPORT')     ?: ($_ENV['MYSQLPORT']     ?? false);
 
 try {
     $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
